@@ -1,0 +1,68 @@
+<div class='col-md-4'>
+  <h3>{{pageTitle}}</h3>
+  <form #form='ngForm' novalidate (ngSubmit)='getEmp()' id='regForm'>
+    <div class='form-group'>
+      <label for='firstName'>First Name</label>
+      <input type='text' id='firstName' class='form-control' name='firstName' [(ngModel)]='firstName'>
+    </div>
+    <div class='form-group'>
+      <label for='lastName'>Last Name</label>
+      <input type='text' id='lastName' data-error='#lastName' class='form-control' name='lastName' [(ngModel)]='lastName'>
+    </div>
+    <div class='form-group'>
+      <label for='userEmail'>Email</label>
+      <input type='email' id='userEmail' class='form-control' name='userEmail' [(ngModel)]='userEmail'>
+    </div>
+    <div class='form-group'>
+      <label for='contactNo'>Contact No</label>
+      <input type='text' id='contactNo' class='form-control' name='contactNo' [(ngModel)]='contactNo'>
+    </div>
+    <div class='form-group'>
+      <label for='userAddress'>Address</label>
+      <textarea id='userAddress' class='form-control' name='userAddress' [(ngModel)]='userAddress'></textarea>
+    </div>
+    <div class='form-group'>
+      <label for='userName'>User Name</label>
+      <input type='text' id='userName' class='form-control' name='userName' [(ngModel)]='userName'>
+    </div>
+    <div class='form-group'>
+      <label for='userPass'>Password</label>
+      <input type='password' id='userPass' class='form-control' name='userPass' [(ngModel)]='userPass'>
+    </div>
+
+    <label style='color:#007ACC;'>Gender</label>
+    <div class='radio'>
+      <label>
+        <input type='radio' name='gender' value='male' [(ngModel)]='gender'> Male
+      </label>
+    </div>
+    <div class='radio'>
+      <label>
+        <input type='radio' name='gender' value='female' [(ngModel)]='gender'> Female
+      </label>
+    </div>
+    <div class='form-group'>
+      <label>Qualification</label>
+      <select class='form-control' name='qualification' [(ngModel)]='qualify'>
+        <option *ngFor='let qualification of qualifications' value='{{qualification}}'>
+          {{qualification}}
+        </option>
+      </select>
+    </div>
+    <div class='form-group'>
+      <label>Experience</label>
+      <select class='form-control' name='experience' [(ngModel)]='exp'>
+        <option *ngFor='let experience of experiences' value='{{experience}}'>
+          {{experience}}
+        </option>
+      </select>
+    </div>
+    <label style='color:#007ACC;'>Languages</label>
+    <div class='checkbox' *ngFor='let language of languages'>
+      <label>
+        <input type='checkbox' name='lang' value='{{language}}' (change)='onChange(language, $event.target.checked)'>{{language}}
+      </label>
+    </div>
+    <button type='submit' id='submitButton' class='btn btn-primary'>Register</button>
+  </form>
+</div>
