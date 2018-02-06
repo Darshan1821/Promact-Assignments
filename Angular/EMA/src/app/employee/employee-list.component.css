@@ -1,0 +1,10 @@
+thead{
+    color: #337AB7;
+}
+td{
+    vertical-align: middle!important;
+}
+.panel-footer{
+    line-height: 10px;
+    background: #337AB7;
+}

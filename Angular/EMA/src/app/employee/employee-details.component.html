@@ -1,0 +1,65 @@
+<div class='panel panel-primary' *ngIf='emp'>
+    <div class='panel-heading' style='font-size:large'>
+        {{emp.firstName}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>First Name:</div>
+                    <div class='col-md-6'>{{emp.firstName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Last Name:</div>
+                    <div class='col-md-6'>{{emp.lastName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>User Email:</div>
+                    <div class='col-md-6'>{{emp.userEmail}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Contact No:</div>
+                    <div class='col-md-6'>{{emp.contactNo}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Address:</div>
+                    <div class='col-md-6'>{{emp.userAddress}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>User Name:</div>
+                    <div class='col-md-6'>{{emp.userName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Password:</div>
+                    <div class='col-md-6'>{{emp.userPass}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Gender:</div>
+                    <div class='col-md-6'>{{emp.gender}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Qualification:</div>
+                    <div class='col-md-6'>{{emp.qualification}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Experience:</div>
+                    <div class='col-md-6'>{{emp.experience}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Language:</div>
+                    <div class='col-md-6'>{{emp.lang}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' [routerLink]='["/employees"]'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+        <a class='btn btn-primary' style='width:80px;margin-left:10px' [routerLink]='["/employees",emp.id,"edit"]'>
+            Edit
+        </a>
+    </div>
+</div>

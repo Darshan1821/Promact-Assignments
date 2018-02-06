@@ -1,9 +1,15 @@
 <div>
   <nav class='navbar navbar-default'>
     <div class='container-fluid'>
-        <a class='navbar-brand'>{{pageTitle}}</a>
+        <a class='navbar-brand'><b>{{pageTitle}}</b></a>
         <ul class='nav navbar-nav'>
-          <li><a [routerLink]="['/employee']">Home</a></li>
+          <li routerLinkActive='active'><a [routerLink]="['/welcome']">Home</a></li>
+          <li routerLinkActive='active' [routerLinkActiveOptions]='{ exact : true }'>
+            <a [routerLink]="['/employees']">
+              Employee List
+            </a>
+          </li>
+          <li routerLinkActive='active'><a [routerLink]="['/employees',-1,'edit']">Add Employee</a></li>
       </ul>
     </div>
   </nav>

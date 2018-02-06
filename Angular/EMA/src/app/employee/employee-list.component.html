@@ -1,0 +1,73 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' [(ngModel)]='listFilter' />
+            </div>
+        </div>
+        <div class='row' *ngIf='listFilter'>
+            <div class='col-md-6'>
+                Filtered by: {{listFilter}}
+            </div>
+        </div>
+        <br>
+        <div class='row'>
+            <div class='table-responsive'>
+                <table class='table' *ngIf='employees && employees.length'>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>User Email</th>
+                            <th>Contact No</th>
+                            <th>User Address</th>
+                            <th>User Name</th>
+                            <th>User Password</th>
+                            <th>Gender</th>
+                            <th>Qualification</th>
+                            <th>Experience</th>
+                            <th>Language</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let employee of filteredEmployees'>
+                            <td> {{ employee.firstName }}</td>
+                            <td> {{ employee.lastName }}</td>
+                            <td> {{ employee.userEmail }}</td>
+                            <td> {{ employee.contactNo }}</td>
+                            <td> {{ employee.userAddress }}</td>
+                            <td> {{ employee.userName }}</td>
+                            <td> {{ employee.userPass }}</td>
+                            <td> {{ employee.gender }}</td>
+                            <td> {{ employee.qualification }}</td>
+                            <td> {{ employee.experience }}</td>
+                            <td> {{ employee.lang }}</td>
+                            <td>
+                                <a class='btn btn-primary' [routerLink]='["/employees",employee.id,"edit"]'>
+                                    Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' (click)='deleteEmp(employee.id)'>
+                                    Delete
+                                </a>
+                            </td>
+                            <td>
+                                <a class='btn btn-primary' [routerLink]='["/employees",employee.id]'>
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>&nbsp;</div>
+</div>
