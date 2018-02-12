@@ -29,7 +29,6 @@ export class EmployeeService{
             }
             empIndex++;
         }
-        console.log(JSON.parse(empList[empIndex]));
         
         return JSON.parse(empList[empIndex]);
     }

@@ -46,7 +46,11 @@
                             <td> {{ employee.gender }}</td>
                             <td> {{ employee.qualification }}</td>
                             <td> {{ employee.experience }}</td>
-                            <td> {{ employee.lang }}</td>
+                            <td> 
+                                <div *ngFor='let lang of employee.languages'> 
+                                    <span *ngIf='lang.IsEnabled'> {{ lang.Name }} </span>
+                                </div>
+                            </td>
                             <td>
                                 <a class='btn btn-primary' [routerLink]='["/employees",employee.id,"edit"]'>
                                     Edit

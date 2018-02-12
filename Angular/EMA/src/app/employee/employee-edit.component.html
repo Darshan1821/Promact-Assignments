@@ -58,9 +58,9 @@
       </select>
     </div>
     <label style='color:#007ACC;'>Languages</label>
-    <div class='checkbox' *ngFor='let language of languages;let num of numbers'>
+    <div class='checkbox' *ngFor='let language of empData.languages' >
       <label>
-        <input type='checkbox' name='lang' id='{{language}}' value='{{language}}' (change)='onChanged(language, $event.target.checked)'>{{language}}
+        <input type='checkbox' [name]='language.Name' value='{{language}}' [(ngModel)]='language.IsEnabled'>{{language.Name}}
       </label>
     </div>
     <a class="btn btn-default" [routerLink]='["/employees"]'>

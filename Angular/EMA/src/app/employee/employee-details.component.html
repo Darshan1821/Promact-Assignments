@@ -48,7 +48,11 @@
                 </div>
                 <div class='row'>
                     <div class='col-md-3'>Language:</div>
-                    <div class='col-md-6'>{{emp.lang}}</div>
+                    <div class='col-md-6'>
+                        <p *ngFor='let lang of emp.languages' style='margin:0px;padding:0px;'> 
+                            <span *ngIf='lang.IsEnabled'> {{ lang.Name }} </span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

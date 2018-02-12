@@ -12,6 +12,8 @@ export class Employee {
         public gender: string='',
         public qualification: string='',
         public experience: string='',
-        public lang: string=''
+        public languages: object[]=[{Name:'C/C++',IsEnabled:false}, {Name:'Java',IsEnabled:false}, 
+        {Name:'C#',IsEnabled:false}, {Name:'PHP',IsEnabled:false}, 
+        {Name:'Python',IsEnabled:false}]
     ) {}
 }
